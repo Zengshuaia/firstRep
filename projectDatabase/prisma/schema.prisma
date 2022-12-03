@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Students{
+  id Int @unique @id
+  name String @default("小曾")
+  age Int @default(20)
+  sex Int @default(1)
+  number Int @default(1)//学号
+  class Int @default(1)//班级
+  state String @default("1")//1:已入学,2:未入学,3:休学中
+  address String @default("湖南省长沙市")
+  phone String @default("10086112233")
+}
+
+model Info{
+  id String @unique @id @default(uuid())
+  name String @default("小曾")
+  age Int @default(20)
+  sex String @default("1")
+  father String @default("")
+  mather String @default("")
+  address String @default("")
+  phone String @default("")
+  date String @default("")
+}
+
+model Work{
+  id Int @id @unique
+  userid Int @default(1)
+  title  String @default("")
+  completed Boolean @default(true)
+}

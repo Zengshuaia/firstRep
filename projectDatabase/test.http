@@ -1,0 +1,25 @@
+POST http://localhost:3000/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "msg":"牛"
+}
+
+###添加数据
+POST http://localhost:3000/users/students/add HTTP/1.1
+Content-Type:application/json
+
+{
+    "id":2,
+    "name":"小玲",
+    "age":30,
+    "sex":2,
+    "number":4,
+    "class":2,
+    "state":"1",
+    "address":"湖南省永州市",
+    "phone":"18121233032"
+}
+
+###
+GET http://localhost:3000/users/students/find?name=小曾 HTTP/1.1
